@@ -1,0 +1,65 @@
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded fixed-top">
+    <a class="navbar-brand" href="" (click)="false">Navbar <i class="ti-menu toggle-nav" (click)="toggleSidebar=!toggleSidebar"></i></a>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link" routerLink="/contact">Contact</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav float-right">
+            <li class="nav-item" routerLinkActive="active" *ngIf="!isLoggedIn">
+                <a class="nav-link" routerLink="/login">Login</a>
+            </li>
+            <li class="nav-item" *ngIf="isLoggedIn">
+                <a class="nav-link" href="" (click)="logout($event)">Logout</a>
+            </li>
+        </ul>
+        <!--         <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form> -->
+    </div>
+</nav>
+<div id="wrapper">
+    <aside class="sidebar" [class.toggled]="toggleSidebar">
+        <div class="sidebar-inner">
+            <ul class="menu">
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/demo']">Demo</a>
+                </li>
+                <li class="sub-menu" [class.toggled]="toggleSubMenu">
+                    <a [routerLink]="['/ui']" (click)="toggleSubMenu=!toggleSubMenu;false">
+                        <i class="ti-angle-right menu-arrow"></i> UI Components
+                    </a>
+                    <ul class="animated" [class.fadeIn]="toggleSubMenu">
+                        <li>
+                            <a [routerLink]="['/ui/toast']">Toast</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="sub-menu" [class.toggled]="toggleSubMenu">
+                    <a href="" (click)="toggleSubMenu=!toggleSubMenu;false">
+                        <i class="ti-angle-right menu-arrow"></i> Headers
+                    </a>
+                    <ul class="animated" [class.fadeIn]="toggleSubMenu">
+                        <li><a data-ng-click="mactrl.sidebarStat($event)" data-ui-sref="headers.textual-menu" data-ui-sref-active="active" class="active" href="#/headers/textual-menu">Textual menu</a></li>
+                        <li><a data-ng-click="mactrl.sidebarStat($event)" data-ui-sref="headers.image-logo" data-ui-sref-active="active" href="#/headers/image-logo">Image logo</a></li>
+                        <li><a data-ng-click="mactrl.sidebarStat($event)" data-ui-sref="headers.mainmenu-on-top" data-ui-sref-active="active" href="#/headers/mainmenu-on-top">Mainmenu on top</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </aside>
+    <div class="content">
+        <!-- Page content goes here -->
+        <router-outlet></router-outlet>
+        <footer class="footer">
+            <div class="container-fluid">
+                <p>Copyright &copy; 2017</p>
+            </div>
+        </footer>
+    </div>
+</div>
