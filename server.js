@@ -5,5 +5,5 @@ var express = require("express"),
 app.use(express.static("dist"));
 
 app.listen(port, function(){
-	console.log("browse http://localhost:5000/")
+	console.log("browse http://localhost:"+ port);
 });

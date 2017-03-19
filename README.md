@@ -1,14 +1,14 @@
-# Angular 2 Project
+# Angular Demo
 
-## Setup
+![Angular Demo](perf.png)
 
 ```
-npm i angular-cli -g
-ng new ng2project --style=scss --routing
-ng serve // http://localhost:4200/
+npm i
+ng serve ( dev env ) // http://localhost:4200 ( no service worker )
+
+// prod
+npm run build-prod
+node server.js // http://localhost:5000 ( with service worker )
 ```
 
-## References
-
-- REST API https://reqres.in/api/users
 

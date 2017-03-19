@@ -22,7 +22,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
