@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: 'app/pages/demo/demo.module#DemoModule'
   },
   {
+    path: 'pokemon',
+    loadChildren: 'app/pages/pokemon/pokemon.module#PokemonModule'
+  },
+  {
     path: 'ui',
     loadChildren: 'app/ui/ui.module#UiModule'
   },

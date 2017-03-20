@@ -1,0 +1,39 @@
+<div class="container-fluid">
+    <h1 class="my-2">Pokemons</h1>
+    <form [formGroup]="searchForm" class="mb-4">
+        <input type="text" class="form-control" placeholder="Search" formControlName="search" />
+    </form>
+    <div class="row">
+        <div class="col-sm-4 mb-3" *ngFor="let p of pokemon | async">
+            <div class="card">
+                <div class="card-block">
+                    <a [routerLink]="['/pokemon', p.id]" class="card--media">
+                        <i [class]="' sprite sprite-' + p.id"></i>
+                        <div class="card--media__content">
+                            {{p.name}} <span class="float-right">#{{p.id}}</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--<div bp-layout="row">
+	<div bp-layout="col 12">
+		<form [formGroup]="searchForm" class="input">
+			<input type="text" aria-label="Search" placeholder="Search" formControlName="search" />
+		</form>
+	</div>
+</div>
+<div bp-layout="row">
+	<div *ngFor="let p of pokemon | async" bp-layout="col 6 4@md 2@lg">
+		<a [routerLink]="['./', p.id]" class="card--media">
+			<i [class]="' sprite sprite-' + p.id"></i>
+			<div class="card--media__content">
+				{{p.name}} <span bp-layout="float-right">#{{p.id}}</span>
+			</div>
+		</a>
+	</div>
+</div>-->
+<router-outlet></router-outlet>

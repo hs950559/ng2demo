@@ -30,6 +30,9 @@
                 <li routerLinkActive="active">
                     <a [routerLink]="['/demo']">Demo</a>
                 </li>
+                <li routerLinkActive="active">
+                    <a [routerLink]="['/pokemon']">Pokemon</a>
+                </li>
                 <li class="sub-menu" [class.toggled]="toggleSubMenu">
                     <a [routerLink]="['/ui']" (click)="toggleSubMenu=!toggleSubMenu;false">
                         <i class="ti-angle-right menu-arrow"></i> UI Components

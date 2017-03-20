@@ -11,4 +11,7 @@ npm run build-prod
 node server.js // http://localhost:5000 ( with service worker )
 ```
 
+```
+ng g c myComp --prefix=false --spec=false --skip-import=true
+```
 
